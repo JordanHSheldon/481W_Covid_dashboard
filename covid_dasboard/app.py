@@ -15,3 +15,7 @@ def about():
 @app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html")
+
+@app.route("/testing")
+def test():
+    return render_template('testing.html', temp = getAllStateInfo())

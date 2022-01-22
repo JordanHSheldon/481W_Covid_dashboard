@@ -1,0 +1,60 @@
+{% extends "default.html" %}
+{% block content %}
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col-6">
+            <h2 style="text-align: center;">All State Info</h2>
+            <br>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+
+      {% set count = namespace(value=0) %}
+      {% for t in range(18) %}
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div style="margin-left:auto;border-radius: 15px;background-color: whitesmoke;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+              <h3 style="text-align: center;">{{ temp[count.value]['state'] }}</h3>
+              <ul>
+                <li style="list-style-type: none;"><p style="text-align: left;">Cases: {{ temp[count.value]['positive'] }}</p></li>
+                <li style="list-style-type: none;"><p style="text-align: left;">Deaths: {{ temp[count.value]['death'] }}</p></li>
+                <li style="list-style-type: none;"><p style="text-align: left;">Deaths: {{ temp[count.value]['hospitalizedCurrently'] }}</p></li>
+              </ul>
+            </div>
+            
+          </div>
+          <div class="col-sm">
+            <div style="border-radius: 15px;background-color: whitesmoke;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+              <h3 style="text-align: center;">{{ temp[count.value+1]['state'] }}</h3>
+              <ul>
+              <li style="list-style-type: none;"><p style="text-align: left;">Cases: {{ temp[count.value+1]['positive'] }}</p></li>
+              <li style="list-style-type: none;"><p style="text-align: left;">Deaths: {{ temp[count.value+1]['death'] }}</p></li>
+              <li style="list-style-type: none;"><p style="text-align: left;">Deaths: {{ temp[count.value+1]['hospitalizedCurrently'] }}</p></li> 
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div style="border-radius: 15px;background-color: whitesmoke;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+              <h3 style="text-align: center;">{{ temp[t+2]['state'] }}</h3>
+              <ul>
+                <li style="list-style-type: none;"><p style="text-align: left;">Cases: {{ temp[count.value+2]['positive'] }}</p></li>
+                <li style="list-style-type: none;"><p style="text-align: left;">Deaths: {{ temp[count.value+2]['death'] }}</p></li>
+                <li style="list-style-type: none;"><p style="text-align: left;">Deaths: {{ temp[count.value+2]['hospitalizedCurrently'] }}</p></li> 
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% set count.value = count.value + 3 %}
+      {% endfor %}
+
+
+{% endblock %}
+
+
