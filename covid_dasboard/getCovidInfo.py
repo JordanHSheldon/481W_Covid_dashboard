@@ -1,6 +1,4 @@
-#from sre_parse import State
 import urllib.request, json 
-
 # function for specific state info
 # if state or territory cant be found, show all states/ territories
 def getStateInfo(state):
@@ -41,7 +39,6 @@ def getState(temp):
     "puerto rico": "PR","united states minor outlying islands": "UM",
     "u.s. virgin islands": "VI",
 }
-    #print(us_state_to_abbrev[temp])
     temp = temp.lower()
     if(len(temp)==2):
         return temp
