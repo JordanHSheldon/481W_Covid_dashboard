@@ -49,3 +49,8 @@ def getState(temp):
             return "null"
     else:
         return "null"
+
+
+# function for getting which state is which rank in most covid cases.
+def getCovidRank():
+    return None
