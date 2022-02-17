@@ -28,7 +28,7 @@ def dashboard():
         print(temp)
         return redirect("/"+temp)
     else:
-        return render_template("dashboard.html")
+        return render_template('dashboard.html', temp = getAllStateInfo())
 
 @app.route("/testing", methods=['GET', 'POST'])
 def test():
