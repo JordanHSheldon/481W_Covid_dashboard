@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request,redirect
 from datetime import timedelta
-from getCovidInfo import getAllStateInfo
+from getCovidInfo import getAllStateInfo, getCSV, getAllCounties, getAllStates
 from getCovidInfo import getStateInfo
 app = Flask(__name__)
 
@@ -32,12 +32,10 @@ def dashboard():
 
 @app.route("/testing", methods=['GET', 'POST'])
 def test():
-    if request.method == 'POST':
-        temp = request.form['search']
-        print(temp)
-        return redirect("/"+temp)
-    else:
-        return render_template('testing.html', temp = getAllStateInfo())
+    getCSV()
+    getAllStates()
+    return render_template('testing.html', data=getAllCounties())
+    
 
 @app.route("/<t>", methods=['GET', 'POST'])
 def yes(t):
@@ -45,5 +43,5 @@ def yes(t):
         temp = request.form['search']
         return redirect("/"+temp)
     else:
-        state = '%s' % t #str(request.args.get('t'))
+        state = '%s' % t 
         return render_template('test.html', temp = getStateInfo(state))
