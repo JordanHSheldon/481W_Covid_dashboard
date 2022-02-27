@@ -1,7 +1,5 @@
 import urllib.request, json, requests
 from contextlib import closing
-stateList = ['AK','AL', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
-
 
 link = "https://api.covidactnow.org/v2/counties.csv?apiKey=0600140b5e8f4e179b6c7fdf39dce72f"
 #import pandas as pd
@@ -25,7 +23,7 @@ def getAllStateInfo():
 
 
 def getCSV():
-    # Retrieving the data
+    # Retrieving the data and downloads it as a local file.
     req = requests.get(link)
     url_content = req.content
     csv_file = open('counties.csv', 'wb')
@@ -33,61 +31,45 @@ def getCSV():
     csv_file.close()
 
 
-def getAllCounties():
-    # organizing the data.
+# Method returns array of dictionaries that contain data on all 
+# counties in a given state's covid data
+def getState(state):
     results = []
     file_name = "counties.csv"
     file = open(file_name,'r')
     lines = file.readlines()
-    for k in range(0,len(lines),1):
-        temp = {}
-        arraysplit = lines[k].split(',')
-        temp['state'] = arraysplit[2]
-        temp['county'] = arraysplit[3]
-        temp['population'] = arraysplit[8]
-        results.append(temp)
-    return results
-
-def getAllStates():
-    temp = getAllCounties()
-    results = []
-    counter = 0
-        
+    for j in range(0,len(lines),1):
+        # splitting the data read in into seperate lines in code.
+        arraysplit = lines[j].split(',')
+        d={}
+        d['country'] =  arraysplit[1]
+        d['state'] =  arraysplit[2]
+        d['county'] =  arraysplit[3]
+        d['population'] =  arraysplit[8]
+        d['testPositiveRatio'] =  arraysplit[9]
+        d['metrics.infectionRate'] =  arraysplit[13]
+        d['riskLevelsOverall'] =  arraysplit[18]
+        d['actualCases'] =  arraysplit[25]
+        d['actualDeaths'] =  arraysplit[26]
+        results.append(d)
+        # getting an array of each county in a specific state and relevant data
+    formatted_results=[]
+    k = 0
+    while(k<len(lines)):
+        if(results[k]['state']==state):
+            formatted_results.append(results[k])
+        k+=1
+    return formatted_results   
     
 
 
-# function that returns a state or territories
-# two letter acronym
-def getState(temp):
-    us_state_to_abbrev = {
-    "alabama": "AL","alaska": "AK","arizona": "AZ","arkansas": "AR",
-    "california": "CA","colorado": "CO","connecticut": "CT",
-    "delaware": "DE","florida": "FL","georgia": "GA","hawaii": "HI",
-    "idaho": "ID","illinois": "IL","indiana": "IN","iowa": "IA",
-    "kansas": "KS","kentucky": "KY","louisiana": "LA","maine": "ME",
-    "maryland": "MD","massachusetts": "MA","michigan": "MI","minnesota": "MN",
-    "mississippi": "MS","missouri": "MO","montana": "MT","nebraska": "NE",
-    "nevada": "NV","new Hampshire": "NH","new Jersey": "NJ","new Mexico": "NM",
-    "new York": "NY","north Carolina": "NC","north Dakota": "ND","ohio": "OH",
-    "oklahoma": "OK","oregon": "OR","pennsylvania": "PA","rhode Island": "RI",
-    "south Carolina": "SC","south Dakota": "SD","tennessee": "TN","texas": "TX",
-    "utah": "UT","vermont": "VT","virginia": "VA","washington": "WA",
-    "west Virginia": "WV","wisconsin": "WI","wyoming": "WY","district of columbia": "DC",
-    "american samoa": "AS","guam": "GU","northern mariana islands": "MP",
-    "puerto rico": "PR","united states minor outlying islands": "UM",
-    "u.s. virgin islands": "VI",
-}
-    temp = temp.lower()
-    if(len(temp)==2):
-        return temp
-    elif(len(temp)>2):
-        if(temp in us_state_to_abbrev.keys()):
-            return us_state_to_abbrev[temp].lower()
-        else:
-            return "null"
-    else:
-        return "null"
-
+# function that returns a counties data and returns it in the 
+# form of an array
+def getCounty(state,county):
+    temp = getState(state)
+    for k in range(0,len(temp),1):
+        if(temp[k]['county']==county):
+            return temp[k]
 
 # function for getting which state is which rank in most covid cases.
 def getCovidRank():
