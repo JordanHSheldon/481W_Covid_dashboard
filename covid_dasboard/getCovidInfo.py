@@ -1,8 +1,8 @@
 import urllib.request, json, requests
-from contextlib import closing
 
+# old link
 link = "https://api.covidactnow.org/v2/counties.csv?apiKey=0600140b5e8f4e179b6c7fdf39dce72f"
-#import pandas as pd
+
 # function for specific state info
 # if state or territory cant be found, show all states/ territories
 def getStateInfo(state):
@@ -21,9 +21,9 @@ def getAllStateInfo():
         data = json.loads(url.read().decode())
         return(data)
 
-
+# Method that pulls a csv file from an api
+# then saves it locally to be accessed.
 def getCSV():
-    # Retrieving the data and downloads it as a local file.
     req = requests.get(link)
     url_content = req.content
     csv_file = open('counties.csv', 'wb')
@@ -39,7 +39,6 @@ def getState(state):
     file = open(file_name,'r')
     lines = file.readlines()
     for j in range(0,len(lines),1):
-        # splitting the data read in into seperate lines in code.
         arraysplit = lines[j].split(',')
         d={}
         d['country'] =  arraysplit[1]
@@ -52,11 +51,10 @@ def getState(state):
         d['actualCases'] =  arraysplit[25]
         d['actualDeaths'] =  arraysplit[26]
         results.append(d)
-        # getting an array of each county in a specific state and relevant data
     formatted_results=[]
     k = 0
     while(k<len(lines)):
-        if(results[k]['state']==state):
+        if(results[k]['state']==str(state).upper()):
             formatted_results.append(results[k])
         k+=1
     return formatted_results   
