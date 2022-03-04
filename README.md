@@ -33,3 +33,7 @@ pip install flask
 ### Step 4
 clone this repository into the folder you made earlier:
 git clone https://github.com/JordanHSheldon/481W_Covid_dashboard
+
+### Step 5 
+Run this command to start the app:
+Flask run
