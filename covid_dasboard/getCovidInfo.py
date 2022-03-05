@@ -55,9 +55,13 @@ def getState(state):
     k = 0
     while(k<len(lines)):
         if(results[k]['state']==str(state).upper()):
+            
             formatted_results.append(results[k])
         k+=1
-    return formatted_results   
+    try:    
+        return formatted_results   
+    except:
+        print()
     
 
 
