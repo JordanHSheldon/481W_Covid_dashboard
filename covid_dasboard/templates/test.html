@@ -1,14 +1,28 @@
 {% extends "default.html" %}
 {% block content %}
-
+<br>
 <section class="ftco-section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6 text-center mb-5">
-        <h2 class="heading-section">{{ state }} </h2>
-        <p>Covid Statistics by county and total</p>
+        <table>
+          <tr>
+            <th><image src="..\..\static\AllStateFlags\{{ ack }}.png" alt="{{ state }} flag picture" width="320" height="213"></image></th>
+            <td>
+              <ul style="list-style-type: none;">
+                <li><h2 class="heading-section">{{ state }} </h2></li>
+                <li><p>Covid Statistics for {{state}}</p></li>
+                <li><p>Total Population: {{ total[0]}}</p></li>
+                <li><p>Vacination Percent: {{ total[3]}}</p></li>
+                <li><p>Total Deaths: {{ total[2]}}</p></li>
+                <li><p>Total Cases: {{ total[1]}}</p></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
+    <hr>
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -35,6 +49,7 @@
                 <th>Risk Level</th>
                 <th>Cases</th>
                 <th>Deaths</th>
+                <th>Vacinations Completed</th>
               </tr>
             </thead>
             <tbody>
@@ -48,6 +63,7 @@
                 <td>{{ temp[k]['riskLevelsOverall'] }}</td>
                 <td>{{ temp[k]['actualCases'] }}</td>
                 <td>{{ temp[k]['actualDeaths'] }}</td>
+                <td>{{ temp[k]['vacinationsComplete'] }}</td>
               </tr>
               {% endfor %} 
             </tbody>

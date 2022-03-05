@@ -1,6 +1,7 @@
+from tokenize import Double
 from flask import Flask, render_template, request,redirect
 from datetime import timedelta
-from getCovidInfo import getAllStateInfo, getCSV, getState
+from getCovidInfo import getAllStateInfo, getCSV, getState,getStateName
 app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
@@ -42,5 +43,32 @@ def yes(p):
         return redirect("/"+temp)
     else:
         state = '%s' % p
-        return render_template('test.html', temp = getState(state), state=state)
+        x = getState(state)
+        d = []
+        h = 0
+        totalPopulation=0
+        totalCases=0
+        totalDeaths=0
+        totalVaccination = 0
+
+        for k in range(0,len(x),1):
+            tempPop = int(x[k]["population"])
+            tempCases = int(x[k]["actualCases"])
+            tempDeaths = int(x[k]["actualDeaths"])
+            tempVac = float(x[k]["vacinationsComplete"])
+            totalPopulation+=tempPop
+            totalCases+=tempCases
+            totalDeaths+=tempDeaths
+            totalVaccination+=tempVac
+            h+=1
+        d.append(totalPopulation)
+        d.append(totalCases)
+        d.append(totalDeaths)
+        
+        try:
+            why = totalVaccination/(len(x))*100
+            d.append("%.1f" % why)
+        except:
+            print()
+        return render_template('test.html', temp = x, state=getStateName(state), ack = state, total = d)
         
