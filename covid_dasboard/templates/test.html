@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6 text-center mb-5">
-        <h2 class="heading-section">{{ temp[0]['state'] }} </h2>
+        <h2 class="heading-section">{{ state }} </h2>
         <p>Covid Statistics by county and total</p>
       </div>
     </div>
@@ -38,7 +38,7 @@
               </tr>
             </thead>
             <tbody>
-              {% for k in range(0,temp|length,1) %} 
+              {% for k in range(0,temp|length-1,1) %} 
               <tr>
                 <th scope="row">{{ k }}</th>
                 <td>{{ temp[k]['county'] }}</td>

@@ -42,4 +42,5 @@ def yes(p):
         return redirect("/"+temp)
     else:
         state = '%s' % p
-        return render_template('test.html', temp = getState(state))
+        return render_template('test.html', temp = getState(state), state=state)
+        
