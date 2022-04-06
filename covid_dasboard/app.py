@@ -104,5 +104,6 @@ def yes(p):
             d.append("%.1f" % why)
         except:
             print()
+        # return the html file and passing in the correct information.
         return render_template('test.html', temp = x, state=getStateName(state), ack = state, total = d)
         
