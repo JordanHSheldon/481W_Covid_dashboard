@@ -8,22 +8,22 @@ abbrev = {
     "alabama": "AL","alaska": "AK","arizona": "AZ","arkansas": "AR","california": "CA","colorado": "CO","connecticut": "CT","delaware": "DE",
     "florida": "FL","georgia": "GA","hawaii": "HI","idaho": "ID","illinois": "IL","indiana": "IN","iowa": "IA","kansas": "KS",
     "kentucky": "KY","louisiana": "LA","maine": "ME","maryland": "MD","massachusetts": "MA","michigan": "MI","minnesota": "MN","mississippi": "MS","missouri": "MO",
-    "montana": "MT","Nebraska": "NE","Nevada": "NV","New Hampshire": "NH","New Jersey": "NJ","New Mexico": "NM","New York": "NY","North Carolina": "NC",
-    "north dakota": "ND","ohio": "OH","oklahoma": "OK","oregon": "OR","pennsylvania": "PA","rhode Island": "RI","south Carolina": "SC","south Dakota": "SD",
-    "Tennessee": "TN","Texas": "TX","Utah": "UT","Vermont": "VT","Virginia": "VA","Washington": "WA","West Virginia": "WV","Wisconsin": "WI",
-    "wyoming": "WY","district of columbia": "DC","american Samoa": "AS","Guam": "GU","northern mariana islands": "MP","puerto rico": "PR",
-    "United States Minor Outlying Islands": "UM",
-    "U.S. Virgin Islands": "VI",
+    "montana": "MT","Nebraska": "NE","Nevada": "NV","New Hampshire": "NH","New Jersey": "NJ","newmexico": "NM","New York": "NY","north Carolina": "NC",
+    "north dakota": "ND","ohio": "OH","oklahoma": "OK","oregon": "OR","pennsylvania": "PA","rhode Island": "RI","southcarolina": "SC","south Dakota": "SD",
+    "Tennessee": "TN","Texas": "TX","Utah": "UT","Vermont": "VT","Virginia": "VA","Washington": "WA","West Virginia": "WV","wisconsin": "WI",
+    "wyoming": "WY","district of columbia": "DC","americansamoa": "AS","guam": "GU","northern mariana islands": "MP","puerto rico": "PR",
+    "unitedstatesminoroutlyingislands": "UM",
+    "U.S. virginislands": "VI",
     }
 state_abbrev = {
     'AL': 'alabama','AK': 'alaska','AZ': 'arizona','AR': 'arkansas','CA': 'california','CO': 'colorado','CT': 'connecticut','DE': 'delaware',
     'FL': 'florida','GA': 'georgia','HI': 'hawaii','ID': 'idaho','IL': 'illinois','IN': 'indiana','IA': 'iowa',
-    'KS': 'kansas', 'KY': 'kentucky','LA': 'louisiana','ME': 'maine','MD': 'maryland','MA': 'massachusetts','MI': 'michigan','MN': 'Minnesota','MS': 
-    'mississippi','MO': 'Missouri','MT': 'Montana','NE': 'Nebraska','NV': 'Nevada','NH': 'New Hampshire','NJ': 'New Jersey','NM': 'New Mexico',
-    'NY': 'new York','NC': 'North Carolina','ND': 'North Dakota','OH': 'Ohio','OK': 'Oklahoma','OR': 'Oregon','PA': 'Pennsylvania',
-    'RI': 'rhode Island','SC': 'South Carolina','SD': 'South Dakota','TN': 'Tennessee','TX': 'Texas','UT': 'Utah','VT': 'Vermont',
-    'VA': 'virginia','WA': 'Washington','WV': 'West Virginia','WI': 'Wisconsin','WY': 'Wyoming','DC': 'District of Columbia',
-    'MP': 'northern mariana islands','PW': 'Palau','PR': 'Puerto Rico','VI': 'Virgin Islands',
+    'KS': 'kansas', 'KY': 'kentucky','LA': 'louisiana','ME': 'maine','MD': 'maryland','MA': 'massachusetts','MI': 'michigan','MN': 'minnesota','MS': 
+    'mississippi','MO': 'missouri','MT': 'montana','NE': 'Nebraska','NV': 'Nevada','NH': 'newhampshire','NJ': 'newjersey','NM': 'newmexico',
+    'NY': 'new York','NC': 'northcarolina','ND': 'northdakota','OH': 'ohio','OK': 'oklahoma','OR': 'oregon','PA': 'pennsylvania',
+    'RI': 'rhode Island','SC': 'southcarolina','SD': 'southdakota','TN': 'Tennessee','TX': 'texas','UT': 'utah','VT': 'vermont',
+    'VA': 'virginia','WA': 'washington','WV': 'westvirginia','WI': 'wisconsin','WY': 'wyoming','DC': 'districtofcolumbia',
+    'MP': 'northernmarianaislands','PW': 'palau','PR': 'puertorico','VI': 'virgin Islands',
     }
 
 
@@ -86,7 +86,10 @@ def yes(p):
             tempPop = int(x[k]["population"])
             tempCases = int(x[k]["actualCases"])
             tempDeaths = int(x[k]["actualDeaths"])
-            tempVac = float(x[k]["vacinationsComplete"])
+            if(float(x[k]["vacinationsComplete"]!="")):
+                tempVac = float(x[k]["vacinationsComplete"])
+            else:
+                tempVac = 0
             totalPopulation+=tempPop
             totalCases+=tempCases
             totalDeaths+=tempDeaths
