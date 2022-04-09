@@ -1,5 +1,6 @@
+import uuid
 from tokenize import Double
-from flask import Flask, render_template, request,redirect
+from flask import Flask, render_template, request, redirect, jsonify
 from datetime import timedelta
 from getCovidInfo import getAllStateInfo, getCSV, getState,getStateName
 app = Flask(__name__)
@@ -25,6 +26,7 @@ state_abbrev = {
     'VA': 'virginia','WA': 'Washington','WV': 'West Virginia','WI': 'Wisconsin','WY': 'Wyoming','DC': 'District of Columbia',
     'MP': 'northern mariana islands','PW': 'Palau','PR': 'Puerto Rico','VI': 'Virgin Islands',
     }
+
 
 
 
@@ -60,6 +62,15 @@ def test(t):
     getCSV()
     state = '%s' % t 
     return render_template('testing.html', data=getState(state))
+
+@app.route("/map", methods=['GET', 'POST'])
+def map_page():
+    if request.method == 'POST':
+        temp = request.form['search']
+        print(temp)
+        return redirect("/"+temp)
+    else:
+        return render_template('map.html')
 
 @app.route("/<p>", methods=['GET', 'POST'])
 def yes(p):
@@ -102,4 +113,3 @@ def yes(p):
         except:
             print()
         return render_template('test.html', temp = x, state=getStateName(state), ack = state, total = d)
-        
