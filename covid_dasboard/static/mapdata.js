@@ -7,7 +7,7 @@ var simplemaps_usmap_mapdata={
     popups: "detect",
     
 		//State defaults
-		state_description: "State description",
+		state_description: "",
     state_color: "#88A4BC",
     state_hover_color: "#3B729F",
     state_url: "https://www.cdc.gov/publichealthgateway/healthdirectories/healthdepartments.html",
@@ -77,21 +77,21 @@ var simplemaps_usmap_mapdata={
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/HI"
     },
     AK: {
       name: "Alaska",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/AK"
     },
     FL: {
       name: "Florida",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default",
+      url: "http://localhost:5000/FL",
       inactive: "no"
     },
     NH: {
@@ -99,168 +99,168 @@ var simplemaps_usmap_mapdata={
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/NH"
     },
     VT: {
       name: "Vermont",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/VT"
     },
     ME: {
       name: "Maine",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/ME"
     },
     RI: {
       name: "Rhode Island",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/RI"
     },
     NY: {
       name: "New York",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/NY"
     },
     PA: {
       name: "Pennsylvania",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/PA"
     },
     NJ: {
       name: "New Jersey",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/NJ"
     },
     DE: {
       name: "Delaware",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/DE"
     },
     MD: {
       name: "Maryland",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/MD"
     },
     VA: {
       name: "Virginia",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/VA"
     },
     WV: {
       name: "West Virginia",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/WV"
     },
     OH: {
       name: "Ohio",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/OH"
     },
     IN: {
       name: "Indiana",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/IN"
     },
     IL: {
       name: "Illinois",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/IL"
     },
     CT: {
       name: "Connecticut",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/CT"
     },
     WI: {
       name: "Wisconsin",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/WI"
     },
     NC: {
       name: "North Carolina",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/NC"
     },
     DC: {
       name: "District of Columbia",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/DC"
     },
     MA: {
       name: "Massachusetts",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/MA"
     },
     TN: {
       name: "Tennessee",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/TN"
     },
     AR: {
       name: "Arkansas",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/AR"
     },
     MO: {
       name: "Missouri",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/MO"
     },
     GA: {
       name: "Georgia",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/GA"
     },
     SC: {
       name: "South Carolina",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/SC"
     },
     KY: {
       name: "Kentucky",
@@ -268,175 +268,175 @@ var simplemaps_usmap_mapdata={
       color: "default",
       zoomable: "no",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/KY"
     },
     AL: {
       name: "Alabama",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/AL"
     },
     LA: {
       name: "Louisiana",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/LA"
     },
     MS: {
       name: "Mississippi",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/MS"
     },
     IA: {
       name: "Iowa",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/IA"
     },
     MN: {
       name: "Minnesota",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/MN"
     },
     OK: {
       name: "Oklahoma",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/OK"
     },
     TX: {
       name: "Texas",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/TX"
     },
     NM: {
       name: "New Mexico",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/NM"
     },
     KS: {
       name: "Kansas",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/KS"
     },
     NE: {
       name: "Nebraska",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/NE"
     },
     SD: {
       name: "South Dakota",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/SD"
     },
     ND: {
       name: "North Dakota",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/ND"
     },
     WY: {
       name: "Wyoming",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/WY"
     },
     MT: {
       name: "Montana",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/MT"
     },
     CO: {
       name: "Colorado",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/CO"
     },
     UT: {
       name: "Utah",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/UT"
     },
     AZ: {
       name: "Arizona",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/AZ"
     },
     NV: {
       name: "Nevada",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/NV"
     },
     OR: {
       name: "Oregon",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/OR"
     },
     WA: {
       name: "Washington",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/WA"
     },
     CA: {
       name: "California",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/CA"
     },
     MI: {
       name: "Michigan",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/MI"
     },
     ID: {
       name: "Idaho",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "http://localhost:5000/ID"
     },
     GU: {
       name: "Guam",
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default",
+      url: "http://localhost:5000/GU",
       hide: "yes"
     },
     VI: {
@@ -444,7 +444,7 @@ var simplemaps_usmap_mapdata={
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default",
+      url: "http://localhost:5000/VI",
       hide: "yes"
     },
     PR: {
@@ -452,7 +452,7 @@ var simplemaps_usmap_mapdata={
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default",
+      url: "http://localhost:5000/PR",
       hide: "yes"
     },
     AS: {
@@ -460,7 +460,7 @@ var simplemaps_usmap_mapdata={
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default",
+      url: "http://localhost:5000/AS",
       hide: "yes"
     },
     MP: {
@@ -468,7 +468,7 @@ var simplemaps_usmap_mapdata={
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default",
+      url: "http://localhost:5000/MP",
       hide: "yes"
     }
   },
@@ -479,7 +479,7 @@ var simplemaps_usmap_mapdata={
       lng: -74,
       description: "default",
       color: "default",
-      url: "default",
+      url: "http://localhost:5000/DE",
       type: "default",
       size: "default"
     },
