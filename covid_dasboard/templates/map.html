@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "default.html" %}
+{% block content %}
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col-6">
+            <h2 style="text-align: center;">United States Covid-19 Map</h2>
+            <br>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <script src="/static/mapdata.js"></script>
+    <script src="/static/usmap.js"></script>
+  </head>
+	<body>
+		<div>
+			<div style="max-width: 1700px"> <!-- Keep map above fold -->
+				<div id="map"></div>
+			</div>
+			<div>For more information visit the <a href="https://www.cdc.gov/publichealthgateway/healthdirectories/healthdepartments.html">CDC Website</a>.</div>
+		</div>
+	</body>
+</html>
+
+{% endblock %}
+
