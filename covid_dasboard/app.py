@@ -72,6 +72,15 @@ def map_page():
     else:
         return render_template('map.html')
 
+@app.route("/news", methods=['GET', 'POST'])
+def news_page():
+    if request.method == 'POST':
+        temp = request.form['search']
+        print(temp)
+        return redirect("/"+temp)
+    else:
+        return render_template('news.html')
+
 @app.route("/<p>", methods=['GET', 'POST'])
 def yes(p):
     if request.method == 'POST':
