@@ -12,6 +12,7 @@ Link: https://covidactnow.org/data-api
 Jordan Sheldon
 James Nalepa
 Noah Race
+Aaron Manalil
 
 ## Setup
 
